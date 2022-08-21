@@ -1,0 +1,76 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Submit Order</h2>
+<table id="orderTable " class="table">
+    <tr>
+        <th>Please enter prefered time and date</th>
+        <th>Please enter food type you would like to recieve</th>
+        <th>Enter the quantity in weight you would like to recieve</th>
+    </tr>
+    <tr>
+        <th>
+            <input type="date" id="dateO" name="dateO">
+            <input type="time" id="timeO" name="timeO">
+        </th>
+
+        <th>
+            <select name="foodT" id="foodT">
+                <option value="Perishable">Perishable Food</option>
+                <option value="Canned">Canned Food</option>
+                <option value="Dry">Dry Food</option>
+            </select>
+        </th>
+
+        <th>
+            <input class="form-field" id="num11">
+        </th>
+    </tr>
+</table>
+
+<script>
+    var objArray = [];
+    var i = 0;
+    var text;
+
+    function add1() {
+        i++;
+        let obj = {};
+        this.objArray.push(obj);
+        addO();
+
+    }
+    function addO() {
+        let D = document.getElementById("dateO").value;
+        let T = document.getElementById("timeO").value;
+        let FT = document.getElementById("foodT").value;
+        let FQ = document.getElementById("num11").value;
+
+        text += "<li>" + "Your order for " + FQ + "kg of " + FT + " food will be sent to you on " + D + " and will arrive at approxately " + T; + " </li>";
+
+        document.getElementById("answerTa").innerHTML = text;
+    }
+
+    function addD() {
+        var answerTa = document.getElementById("answerTa");
+        var items = document.querySelectorAll("#answerTa li");
+        answerTa.removeChild(items[items.length - 1]);
+    }
+
+</script>
+
+
+<button id="buttonO" type="button" onclick="add1()">Add Order</button>
+
+<p><span id="answerTa"></span></p>
+
+<button id="buttonD" type="button" onclick="addD()">Delete Last Order</button>
+
+
+
+
+
+
+

@@ -1,0 +1,41 @@
+﻿@using _272_HW4.ViewModels
+@Model List<Food>
+
+
+    <h2>Inventory System</h2>
+
+    <h2>Inventory</h2>
+
+    <table class="table table-bordered">
+        <tr>
+            <th>Name</th>
+            <th>Food Type</th>
+            <th>Main Ingrediant</th>
+            <th>Summary</th>
+            <th>Urgency</th>
+        </tr>
+        @foreach (var food in Model)
+        {
+            <tr>
+                <td>@food.Name</td>
+                <td>
+                    @if (food.GetType() == typeof(Perishable))
+                    {
+                        @:Perishable
+                    }
+                    @if (food.GetType() == typeof(Canned))
+                    {
+                        @:Canned Food
+                    }
+                    @if (food.GetType() == typeof(Dry))
+                    {
+                        @:Dry Food
+                    }
+                </td>
+                <td>@food.MainIngrediant</td>
+                <td>@food.getinfo()</td>
+                <td>@food.urgency()</td>
+            </tr>
+        }
+    </table>
+

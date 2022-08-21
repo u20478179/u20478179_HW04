@@ -1,0 +1,47 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Price Checker</h2>
+<h4>Will be too expensive if the new price is 50% above the average price</h4>
+
+    <form>
+    <table class="table">
+        <tr>
+            <th>Average Price</th>
+            <th>New Price</th>
+        </tr>
+        <tr>
+            <th><input class="form-field" id="num7"></th>
+            <th><input class="form-field" id="num8"></th>
+        </tr>
+    </table>
+    <script>
+                function priceC() {
+
+                    let a = document.getElementById("num7").value;
+
+                    let b = document.getElementById("num8").value;
+
+                    let c = b/1-a/1;
+                  
+                    let d = a/2;
+
+                    if (c > d) {
+                        document.getElementById("answer").innerHTML = "The new food price is too expensive";
+                    }
+                    else {
+                        document.getElementById("answer").innerHTML = "The new food price is acceptable";
+                    }
+
+
+
+
+                }
+    </script>
+    <button id="buttonP" type="button" onclick="priceC()">ChecK Price Validity</button>
+    <br>
+    <p id="answer"></p>
+    </form>
+

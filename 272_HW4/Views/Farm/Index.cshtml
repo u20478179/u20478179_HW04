@@ -1,0 +1,93 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Farm Production Checker</h2>
+
+
+<form>
+    <table class="table">
+        <tr>
+            <th>Farm Size in Hectares</th>
+            <th>Select Fruit/Veg type</th>
+            <th>Average Fruit/Veg pruction in Tons per month</th>
+        </tr>
+        <tr>
+            <th><input class="form-field" id="num9"></th>
+            <th>
+                <select name="F/V" id="F/V">
+                    <option value="Bean">Bean</option>
+                    <option value="Beetroot">Beetroot</option>
+                    <option value="Cabbage">Cabbage</option>
+                    <option value="Melon">Melon</option>
+                    <option value="Broccoli">Broccoli</option>
+                    <option value="Carrot">Carrot</option>
+                    <option value="Cucumber">Cucumber</option>
+                    <option value="Onion">Onion</option>
+                    <option value="Pepper">Pepper</option>
+                    <option value="Potato">Potato</option>
+                    <option value="Tomato">Tomato</option>
+                </select>
+            </th>
+            <th><input class="form-field" id="num10"></th>
+        </tr>
+    </table>
+    <script>
+            function productionC() {
+
+                let a = document.getElementById("num9").value;
+
+                let b = document.getElementById("num10").value;
+
+                let f = document.getElementById("F/V").value;
+
+                let p = b / a;
+
+                if (f == "Bean" && p < 5) {
+                    document.getElementById("answer").innerHTML = "The farm's food production rate of " + f + "s is Unacceptable";
+                }
+                else if (f == "Beetroot" && p < 18) {
+                    document.getElementById("answer").innerHTML = "The farm's food production rate of " + f + "s is Unacceptable";
+                }
+                else if (f == "Cabbage" && p < 50) {
+                    document.getElementById("answer").innerHTML = "The farm's food production rate of " + f + "s is Unacceptable";
+                }
+                else if (f == "Melon" && p < 20) {
+                    document.getElementById("answer").innerHTML = "The farm's food production rate of " + f + "s is Unacceptable";
+                }
+                else if (f == "Broccoli" && p < 8) {
+                    document.getElementById("answer").innerHTML = "The farm's food production rate of " + f + "s is Unacceptable";
+                }
+                else if (f == "Carrot" && p < 30) {
+                    document.getElementById("answer").innerHTML = "The farm's food production rate of " + f + "s is Unacceptable";
+                }
+                else if (f == "Cucumber" && p < 15) {
+                    document.getElementById("answer").innerHTML = "The farm's food production rate of " + f + "s is Unacceptable";
+                }
+                else if (f == "Onion" && p < 25) {
+                    document.getElementById("answer").innerHTML = "The farm's food production rate of " + f + "s is Unacceptable";
+                }
+                else if (f == "Pepper" && p < 30) {
+                    document.getElementById("answer").innerHTML = "The farm's food production rate of " + f + "s is Unacceptable";
+                }
+                else if (f == "Potato" && p < 17) {
+                    document.getElementById("answer").innerHTML = "The farm's food production rate of " + f + "s is Unacceptable";
+                }
+
+                else if (f == "Tomato" && p < 45) {
+                    document.getElementById("answer").innerHTML = "The farm's food production rate of " + f + "s is Unacceptable";
+                }
+                else {
+                    document.getElementById("answer").innerHTML = "The farm's food production of " + f + "s rate is Acceptable";
+                }
+
+            }
+    </script>
+    <button id="buttonF" type="button" onclick="productionC()">Farm Check</button>
+    <br>
+    <p id="answer"></p>
+</form>
+<br />
+<a href="https://www.kzndard.gov.za/images/Documents/Horticulture/Veg_prod/expected_yields.pdf">Here is the source for production of a specific fruit or veg in comparison to farm size</a>
+
